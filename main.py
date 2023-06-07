@@ -51,6 +51,6 @@ while True:
     my_database.close()
     logger.info("Successfully uploaded articles to database")
 
-    logger.info('Data collection finished')
+    logger.info('Data collection finished\n')
 
-    time.sleep(300)
+    time.sleep(3600)
