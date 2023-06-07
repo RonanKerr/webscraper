@@ -1,0 +1,25 @@
+ip address: 192.168.1.34
+
+ssh pi@192.168.1.34
+password: raspberry
+
+cat ~/.ssh/id_rsa.pub | ssh pi@192.168.1.34 'mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys'
+
+copy over directory:
+    scp -r webscraper/ pi@192.168.1.34:Desktop/
+
+copy over file:
+    scp myfile.txt pi@192.168.1.34:Desktop/
+
+start script running with
+    tmux new -s your_session_name
+    ./start.sh &
+
+    Hit “Ctrl + B”
+    Then hit “D”
+
+    # list all the sessions running
+    tmux list-sessions
+
+    # attach to your session
+    tmux a -t your_session_name
